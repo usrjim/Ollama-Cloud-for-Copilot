@@ -104,6 +104,15 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     reasoning: true,
   },
   {
+    apiModel: "glm-5.3-flash",
+    family: "glm",
+    maxInputTokens: 1000000,
+    maxOutputTokens: 131072,
+    imageInput: true,
+    toolCalling: true,
+    reasoning: true,
+  },
+  {
     apiModel: "kimi-k2.7-code",
     family: "kimi",
     maxInputTokens: 262144,
