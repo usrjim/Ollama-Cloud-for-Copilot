@@ -62,7 +62,7 @@ const HUMANIZED_SEGMENTS: Record<string, string> = {
 
 const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
   {
-    apiModel: "deepseek-v4-flash:0731",
+    apiModel: "deepseek-v4.1-flash",
     family: "deepseek",
     maxInputTokens: 1000000,
     maxOutputTokens: 384000,
@@ -434,7 +434,7 @@ function inferVersion(id: string, family: string): string {
 
 function inferMaxInputTokens(id: string): number {
   if (
-    id.startsWith("deepseek-v4-") ||
+    id.startsWith("deepseek-v4") ||
     id.startsWith("gemini-3-flash-preview") ||
     id.startsWith("nemotron-3-nano")
   ) {
@@ -482,7 +482,7 @@ function inferMaxInputTokens(id: string): number {
 }
 
 function inferMaxOutputTokens(id: string): number {
-  if (id.startsWith("deepseek-v4-")) {
+  if (id.startsWith("deepseek-v4")) {
     return 384000;
   }
   if (
@@ -556,7 +556,7 @@ function inferToolCalling(id: string): boolean {
 
 function inferReasoning(id: string): boolean {
   // DeepSeek: v4 and v3.1 support thinking, v3.2 does not
-  if (id.startsWith("deepseek-v4-") || id.startsWith("deepseek-v3.1")) {
+  if (id.startsWith("deepseek-v4") || id.startsWith("deepseek-v3.1")) {
     return true;
   }
 
